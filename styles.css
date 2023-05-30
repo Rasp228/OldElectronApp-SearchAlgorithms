@@ -1,0 +1,265 @@
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(to top, #747474, #111111);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 3px solid #ffffff77;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+} 
+
+h1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Serif;
+    padding: 5px;
+    margin-bottom: 55px;
+    background: linear-gradient(60deg, #000000, #ffffff);
+    border-radius: 25px;
+    animation: animate 20s linear infinite;
+}
+
+    h1::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(60deg, #000000, #ffffff);
+        filter: blur(35px);
+        transform: translateY(15px);
+    }
+
+h2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Serif;
+    padding: 2px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 12px;
+    border: 3px solid #8b8b8baa;
+    margin: 30px;
+    color: white;
+    animation: animate_napis 3s ease normal;
+}
+
+h4 {
+    margin: 0px;
+    color: #cfcfcf;
+    text-align: center;
+}
+
+body {
+    background: linear-gradient(90deg, #212121, black);
+}
+
+td {
+    color: white;
+    border: groove;
+    border-color: #676767;
+    background: linear-gradient(90deg, #1d1d1d, black);
+    text-align: center;
+}
+
+button {
+    width: 250px;
+    height: 25px;
+    border-radius: 15px;
+    border-color: white;
+    margin: 2px 2px 30.5px 2px;
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+}
+
+input {
+    width: 250px;
+    height: 25px;
+    transition: 0.5s;
+}
+
+/*class*/
+.glowny {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.dane-tabeli {
+    font-size: 1.2em;
+}
+
+.dane {
+    overflow-y: auto;
+    flex-direction: column;
+}
+
+.wyniki_wyszukiwania {
+    flex-direction: column;
+    overflow-y: auto;
+    display: none;
+}
+
+.lewy_panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.wpisywane {
+    border-radius: 15px;
+    color: white;
+    background-color: black;
+    border-color: #4e4e4e;
+}
+
+.jedno {
+    border: outset;
+    border-radius: 15px;
+    border-color: #5a5a5a;
+    transition: 0.3s;
+}
+
+.jedno_b {
+    background-color: #3b3b3b;
+    box-shadow: 0 0 2px #727272, 0 0 6px #727272, 0 0 10px #727272;
+    border: outset;
+    border-radius: 15px;
+    border-color: #626262;
+    transition: 0.3s;
+}
+
+.drugie {
+    border: outset;
+    border-radius: 10px;
+    border-color: #5a5a5a;
+    transition: 0.3s;
+}
+
+.wysz {
+    margin: 6px;
+}
+
+/*ID*/
+#wyszukiwane {
+    margin: 6px;
+}
+
+#lewy_jeden {
+    display: none;
+}
+
+#lewy_jeden.active {
+    display: none;
+    transform: translateX(500px);
+}
+
+#lewy_dwa {
+    display: none;
+}
+
+#lewy_trzy {
+    display: none;
+}
+
+#Poprawnosc_podawanych_danych {
+    display: none;
+    color: red;
+}
+
+#niewidzialny {
+    display: none;
+}
+
+/*po najechaniu*/
+button:hover {
+    animation: animate_button 1.5s linear infinite;
+}
+
+.jedno:hover {
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.00), rgba(255, 255, 255, 0.20));
+    border-radius: 30px;
+}
+
+.jedno_b:hover {
+    background-color: #3b3b3b;
+    box-shadow: 0 0 4px #727272, 0 0 8px #727272, 0 0 12px #727272;
+    border-radius: 30px;
+}
+
+.drugie:hover {
+    border-radius: 30px;
+}
+
+.wpisywane:hover {
+    border-radius: 3px;
+}
+
+tr:hover {
+    text-shadow: 0 0 4px white;
+}
+
+td:hover {
+    border-color: #e1e1e1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 20px;
+    border: 3px solid #ffffff77;
+    box-shadow: 0px 0px 10px 2px white;
+}
+
+/*po naciœniêciu*/
+button:active {
+    background: white;
+    color: black;
+}
+
+input:active{
+    border-color: white;
+}
+
+/*animacje*/
+@keyframes animate_button {
+    0%, 100% {
+        box-shadow: 0 0 0px white, 0 0 0px white, 0 0 0px white, 0 0 0px white;
+        color: #929292;
+    }
+    50% {
+        box-shadow: 0 0 4px white, 0 0 6px white, 0 0 9px white, 0 0 12px white;
+        color: #ffffff;
+    }
+}
+
+@keyframes animate {
+    0%, 100% {
+        box-shadow: 0px 7px 25px 7px #000000;
+        color: white;
+    }
+    50% {
+        box-shadow: 0px 7px 25px 7px #d5d5d5;
+        color: black;
+    }
+}
+
+@keyframes animate_napis {
+    0% {
+        color: black;
+        text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
+    }
+    100% {
+        color: white;
+        text-shadow: 0 0 0 white, 0 0 0 white, 0 0 0 white;
+    }
+}

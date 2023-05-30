@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Baza danych sklepu spożywczego</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Baza danych sklepu spożywczego</h1>
+    <div class="glowny">
+        <div class="lewy_panel">
+            <button onclick="Otwarcie_dodawania()">Dodawanie elementów</button>
+            <button onclick="Otwarcie_opcji()">Opcje dodatkowe</button>
+            <button onclick="Otwarcie_wyszukiwania()">Wyszukiwanie</button>
+            <div id="Poprawnosc_podawanych_danych"></div>
+        </div>
+        <div class="lewy_panel">
+            <div class="lewy_panel" id="lewy_jeden">
+                <input type="text" class="wpisywane" id="podana_nazwa" required pattern="^[A-Z]\w+\s?\w+?" placeholder="Podaj nazwę produktu">
+                <input type="text" class="wpisywane" id="podana_kategoria" required pattern="^[A-Z]\w+\s?\w+?" placeholder="Podaj nazwę kategorii">
+                <input type="text" class="wpisywane" id="kraj_pochodzenia" required pattern="^[A-Z]\w+\s?\w+?" placeholder="Podaj kraj pochodzenia">
+                <input type="text" class="wpisywane" id="podana_cena" required pattern="^\d+\.\d{2}" placeholder="Podaj cenę zł.gr">
+                <input type="text" class="wpisywane" id="promocja_p" required pattern="^\d{2}" placeholder="Podaj procent promocji">
+                <h4>Dostępność</h4> <input type="checkbox" id="dostepnosc">
+                <h4>Zepsucie</h4> <input type="checkbox" id="zepsucie">
+                <h4>Czy na sprzedaż</h4> <input type="checkbox" id="czy_na_sprzedaz">
+                <button onclick="dodaj_wiersz()">Dodaj Nowy Wiersz</button>
+            </div>
+            <div class="lewy_panel" id="lewy_dwa">
+                <input type="text" class="wpisywane" id="nr_wiersza" pattern="^\d+" placeholder="Podaj nr. wiersza">
+                <button onclick="usun_wiersz()">Usuń Wiersz</button>
+
+                <button onclick="zapisz_dane()">Zapisz dane</button>
+
+                <button onclick="wczytaj_dane()">Odczytaj dane</button>
+
+                <button onclick="wyswietl_lancuch()">Wyświetlanie łańcucha</button>
+                <button onclick="wyswietlanie(dane, 1)">Odświerz tabelę</button>
+
+                <input type="text" class="wpisywane" id="ilosc_losowanych" required pattern="^\d+" placeholder="Podaj ilosc">
+                <button onclick="losowe_dane()">Dane losowe</button>
+            </div>
+            <div class="lewy_panel" id="lewy_trzy">
+                <div class="jedno_b"><h4>Wyszukiwanie binarne</h4> <input type="checkbox" id="wysz_binarne"></div>
+                <div class="jedno_b"><h4>Wyszukiwanie łańcuchowe</h4> <input type="checkbox" id="wysz_lancuch"></div>
+                <div class="jedno"><h4>Wyszukiwanie po nazwie</h4> <input type="checkbox" id="w_nazwa"></div>
+                <div class="jedno"><h4>Wyszukiwanie po kategorii</h4> <input type="checkbox" id="w_kategoria"></div>
+                <div class="jedno"><h4>Wyszukiwanie po kraju</h4> <input type="checkbox" id="w_kraj"></div>
+                <div class="jedno"><h4>Wyszukiwanie po cenie</h4> <input type="checkbox" id="w_cena"></div>
+                <div class="jedno"><h4>Wyszukiwanie po promocji</h4> <input type="checkbox" id="w_promocja"></div>
+                <div class="jedno">
+                    <h4>Wyszukiwanie po:</h4>
+                    <h4>Dostępności</h4><input type="checkbox" id="w_dostepnosc">
+                    <h4>Zepsuciu</h4><input type="checkbox" id="w_zepsucie">
+                    <h4>Warunku sprzedaży</h4><input type="checkbox" id="w_czy_na_sprzedaz">
+                    <div class="drugie">
+                        <h4>Zaznacz, jeśli chcesz wartości</h4><h4> prawdziwe (true)</h4><input type="checkbox" id="prawda">
+                    </div>
+                </div>
+                <input type="text" class="wpisywane" id="wyszukiwane" placeholder="Wpisz szukaną frazę">
+                <button class="wysz" onclick="wyszukiwanie()">Wyszukaj</button>
+            </div>
+        </div>
+        <div class="dane" id="dane_tabeli">
+            <table id='dane-tabeli' class="dane-tabeli">
+            </table>
+            <div id="niewidzialny">
+                <input type="text" class="wpisywane" id="ilosc wyswietlanych" required pattern="^\d+" placeholder="Podaj numer wiersza">
+                <button onclick="wyswietlanie(dane, 1)">Wyświetl</button>
+            </div>
+        </div>
+        <div class="wyniki_wyszukiwania" id="wyszukane_dane_tabeli">
+            <div>
+                <button onclick="cofnij()">Wyjdź z wyszukiwania</button>
+                <button onclick="cofnij_sortowanie()">Cofnij sortowanie</button>
+            </div>
+            <h2>Wyniki wyszukiwania</h2>
+            <table id='dane-tabeli-w' class="dane-tabeli">
+            </table>
+            <input type="text" class="wpisywane" id="ilosc wyswietlanych2" required pattern="^\d+" placeholder="Podaj numer wiersza">
+            <button onclick="wyswietlanie(danex, 2)">Wyświetl</button>
+        </div>
+    </div>
+    <script src="code.js"></script>
+</body>
+</html>
